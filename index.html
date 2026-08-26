@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laho &amp; Marku — Family Real Estate Advisors · Eastchester, NY</title>
+<meta name="description" content="Esmeralda Laho & Arian Marku — licensed family real estate advisors with Houlihan Lawrence. Parents helping families buy and sell in Westchester & Fairfield County. Eastchester, Bronxville, Tuckahoe, Scarsdale, New Rochelle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f2ea; --card:#fffdf8; --ink:#23201a; --muted:#7d7565;
+    --line:#e3dccd; --accent:#1f4d3f; --accent-soft:#e7efe9;
+    --gold:#b98a2e; --red:#a63c2e; --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;font-size:16px}
+  .serif{font-family:'Fraunces',Georgia,serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  section{padding:72px 0}
+  .kicker{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .kicker::before{content:"";width:28px;height:1.5px;background:var(--gold)}
+  h2{font-size:clamp(26px,4vw,38px);font-weight:600;letter-spacing:-.01em;margin:12px 0 10px;line-height:1.15}
+  .sub{color:var(--muted);max-width:640px;font-size:16.5px}
+  a{color:inherit}
+
+  /* ---------- nav ---------- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(246,242,234,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .navin{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px}
+  .brand{font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+  .brand .mark{width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none}
+  .navlinks{margin-left:auto;display:flex;gap:22px;font-size:14px;color:var(--muted);font-weight:500}
+  .navlinks a{text-decoration:none;transition:color .15s}
+  .navlinks a:hover{color:var(--accent)}
+  @media(max-width:800px){.navlinks{display:none}}
+
+  /* ---------- hero ---------- */
+  header.hero{padding:84px 0 64px;background:
+    radial-gradient(1200px 500px at 80% -10%, rgba(31,77,63,.07), transparent 60%),
+    radial-gradient(900px 420px at -10% 110%, rgba(185,138,46,.08), transparent 60%)}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+  h1{font-size:clamp(34px,5.4vw,58px);font-weight:500;letter-spacing:-.02em;line-height:1.06;margin:18px 0 18px}
+  h1 em{font-style:italic;color:var(--accent)}
+  .lede{color:var(--muted);font-size:18px;max-width:520px}
+  .cta-row{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-block;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;transition:transform .12s, box-shadow .12s;border:1px solid transparent}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.primary{background:var(--accent);color:#fdfbf6;box-shadow:0 6px 18px -6px rgba(31,77,63,.45)}
+  .btn.ghost{border-color:var(--line);color:var(--ink);background:var(--card)}
+  .trustrow{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+  .chip{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--muted)}
+  .chip svg{flex:none}
+
+  /* portrait cards */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:480px){.duo{grid-template-columns:1fr}}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-align:center;padding-bottom:14px}
+  .portrait{aspect-ratio:1/1.05;width:100%;object-fit:cover;display:block;background:linear-gradient(160deg,#ece5d6,#ddd3bd);min-height:200px}
+  .pbody{padding:12px 10px 0}
+  .pname{font-weight:700;font-size:15.5px}
+  .prole{font-size:12.5px;color:var(--muted);margin-top:2px}
+
+  /* ---------- towns ---------- */
+  .towns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:28px}
+  .town{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px}
+  .town b{display:block;font-size:15px}
+  .town span{font-size:12.5px;color:var(--muted)}
+
+  /* ---------- services ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:32px}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:border-color .15s}
+  .svc:hover{border-color:var(--accent)}
+  .svc .ico{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px}
+  .svc b{font-size:17px}
+  .svc p{color:var(--muted);font-size:14.5px;margin-top:8px}
+
+  /* ---------- process ---------- */
+  .steps{counter-reset:step;margin-top:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  .step{counter-increment:step;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;position:relative}
+  .step::before{content:"0" counter(step);font-family:'Fraunces',Georgia,serif;font-size:15px;font-weight:600;color:var(--gold);letter-spacing:.08em}
+  .step b{display:block;margin-top:6px;font-size:16.5px}
+  .step p{color:var(--muted);font-size:14px;margin-top:6px}
+
+  /* ---------- team bios ---------- */
+  .team{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+  @media(max-width:800px){.team{grid-template-columns:1fr}}
+  .bio{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .bio-head{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+  .bio-head img{width:74px;height:74px;border-radius:50%;object-fit:cover;background:linear-gradient(160deg,#ece5d6,#ddd3bd);flex:none}
+  .bio-head .nm{font-family:'Fraunces',Georgia,serif;font-size:21px;font-weight:600}
+  .bio-head .rl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:3px}
+  .bio p{color:var(--muted);font-size:14.5px}
+  .bio .facts{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+
+  /* ---------- estimator ---------- */
+  .est-card{background:linear-gradient(150deg,var(--accent),#173d33);color:#f2ede1;border-radius:22px;padding:44px;margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:40px;box-shadow:0 24px 50px -24px rgba(31,77,63,.55)}
+  @media(max-width:860px){.est-card{grid-template-columns:1fr;padding:32px}}
+  .est-left h2{color:#fbf8ef}
+  .est-left .sub{color:rgba(242,237,225,.75)}
+  .field label{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;color:rgba(242,237,225,.85);margin:18px 0 6px}
+  .field input[type=number]{width:100%;padding:13px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.09);color:#fff;font-size:16px;font-weight:600;outline:none}
+  .field input:focus{border-color:var(--gold)}
+  .slider{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;background:rgba(255,255,255,.22);outline:none;margin-top:8px}
+  .slider::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gold);cursor:pointer;border:3px solid #fbf8ef}
+  .slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--gold);cursor:pointer;border:3px solid #fbf8ef}
+  .est-out{background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.3);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+  .est-out .lbl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,237,225,.7)}
+  #estVal{font-family:'Fraunces',Georgia,serif;font-size:clamp(34px,4vw,46px);font-weight:600;color:#fff}
+  .range-note{font-size:12.5px;color:rgba(242,237,225,.65)}
+  .est-disclaim{font-size:11.5px;color:rgba(242,237,225,.55);margin-top:18px;line-height:1.5}
+
+  /* ---------- concierge ---------- */
+  .concierge{background:var(--card);border:1px solid var(--line);border-radius:20px;margin-top:32px;overflow:hidden}
+  .ch-head{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--good,#3a7d44);box-shadow:0 0 0 4px rgba(58,125,68,.15)}
+  .ch-head b{font-size:15px}
+  .ch-head span{color:var(--muted);font-size:13px;margin-left:auto}
+  .ch-body{padding:24px}
+  .ch-msg{background:var(--accent-soft);border-radius:14px 14px 14px 4px;padding:14px 18px;font-size:14.5px;max-width:560px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .qchip{border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:10px 18px;font-size:13.5px;font-weight:600;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;color:var(--ink)}
+  .qchip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+
+  /* ---------- testimonials ---------- */
+  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:32px}
+  .quote{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .stars{color:var(--gold);letter-spacing:3px;font-size:14px}
+  .quote p{margin:12px 0 16px;font-size:15px}
+  .who{font-size:13px;color:var(--muted)}
+  .who b{color:var(--ink)}
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;margin-top:32px}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+  .contact-info .bigphone{font-family:'Fraunces',Georgia,serif;font-size:clamp(26px,3.4vw,36px);font-weight:600;color:var(--accent);text-decoration:none;display:inline-block;margin:6px 0 4px}
+  .contact-info p{color:var(--muted);font-size:15px}
+  .ci-block{margin-top:22px}
+  .ci-block b{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .ci-block p{margin-top:6px}
+  form.lead{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.frow{grid-template-columns:1fr}}
+  form.lead label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
+  form.lead input,form.lead select,form.lead textarea{width:100%;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-family:'Inter',sans-serif;font-size:14.5px;color:var(--ink);outline:none}
+  form.lead input:focus,form.lead select:focus,form.lead textarea:focus{border-color:var(--accent)}
+  .consent{font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.5}
+  button.submit{width:100%;margin-top:18px;padding:15px;border:none;border-radius:999px;background:var(--accent);color:#fdfbf6;font-size:15.5px;font-weight:700;cursor:pointer;transition:opacity .15s;font-family:'Inter',sans-serif}
+  button.submit:hover{opacity:.92}
+  #formMsg{display:none;margin-top:14px;background:var(--accent-soft);border:1px solid #cfe0d6;border-radius:12px;padding:12px 16px;font-size:14px;color:var(--accent);font-weight:600}
+
+  footer{border-top:1px solid var(--line);padding:36px 0 44px;margin-top:40px}
+  .foot{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start;font-size:13px;color:var(--muted)}
+  .equalh{display:flex;gap:12px;align-items:center;margin-top:14px;color:var(--muted);font-size:12.5px}
+  .equalh .eh-mark{border:1.5px solid var(--muted);border-radius:6px;padding:3px 8px;font-weight:700;letter-spacing:.03em}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navin">
+    <div class="brand"><span class="mark">L&amp;M</span><span class="serif">Laho &amp; Marku</span></div>
+    <div class="navlinks">
+      <a href="#towns">Towns</a>
+      <a href="#services">How We Help</a>
+      <a href="#process">The Process</a>
+      <a href="#team">About Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="btn primary" style="margin-left:auto;padding:10px 20px;font-size:13.5px" href="#contact">Get In Touch</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Licensed in NY &amp; CT · Houlihan Lawrence · Eastchester Brokerage</span>
+      <h1 class="serif">Parents first.<br>Advisors always.<br><em>Your neighbors either way.</em></h1>
+      <p class="lede">We’re Esmeralda Laho and Arian Marku — a husband-and-wife team raising our family in Eastchester and guiding other families through the biggest money decision of their lives.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#estimate">What’s my home worth?</a>
+        <a class="btn ghost" href="#contact">Book a family consult</a>
+      </div>
+      <div class="trustrow">
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1f4d3f" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>NY &amp; CT licensed</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1f4d3f" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Houlihan Lawrence, Eastchester office</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1f4d3f" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Bronxville–Eastchester–Tuckahoe locals</span>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="pcard">
+        <img class="portrait" alt="Portrait placeholder — Esmeralda Laho">
+        <div class="pbody"><div class="pname serif">Esmeralda Laho</div><div class="prole">Real Estate Salesperson · Mom of two</div></div>
+      </div>
+      <div class="pcard">
+        <img class="portrait" alt="Portrait placeholder — Arian Marku">
+        <div class="pbody"><div class="pname serif">Arian Marku</div><div class="prole">Real Estate Salesperson · Dad of two</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= TOWNS ================= -->
+<section id="towns">
+  <div class="wrap">
+    <span class="kicker">Where we work</span>
+    <h2 class="serif">We don’t cover “Westchester.”<br>We know these streets.</h2>
+    <p class="sub">School-run routes, which blocks flood, where the quiet cul-de-sacs hide, what $1.1M actually buys in 10708 versus 10709. That knowledge isn’t on Zillow — it’s from living here.</p>
+    <div class="towns">
+      <div class="town"><b>Eastchester</b><span>Home base · 10709</span></div>
+      <div class="town"><b>Tuckahoe</b><span>Village living · 10707</span></div>
+      <div class="town"><b>Bronxville</b><span>School district towns · 10708</span></div>
+      <div class="town"><b>Scarsdale</b><span>Adjacent expertise</span></div>
+      <div class="town"><b>New Rochelle</b><span>Value &amp; commuter access</span></div>
+      <div class="town"><b>Fairfield County, CT</b><span>Licensed across the state line</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <span class="kicker">How we help</span>
+    <h2 class="serif">Four ways families work with us</h2>
+    <div class="svc-grid">
+      <div class="svc"><div class="ico">🏠</div><b>Buy your family home</b><p>School-district strategy, commute reality checks, honest offer advice — we’ve made these choices for our own kids.</p></div>
+      <div class="svc"><div class="ico">📈</div><b>Sell with a plan</b><p>Data-backed pricing, prep guidance that pays, Houlihan Lawrence marketing muscle, and steady communication from list to closing.</p></div>
+      <div class="svc"><div class="ico">🔑</div><b>Rent smart</b><p>Eastchester-area rentals move fast. We’ll tell you straight when renting is right — and exactly what it would take to buy instead.</p></div>
+      <div class="svc"><div class="ico">🧭</div><b>Advise before you decide</b><p>Not ready yet? Perfect. Ask us anything — timelines, numbers, neighborhoods — zero pressure, ever. Advice now, business later.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process">
+  <div class="wrap">
+    <span class="kicker">The process</span>
+    <h2 class="serif">From first hello to keys in hand</h2>
+    <p class="sub">You’ll always know what happens next — and why. Here’s the road map we walk with every client.</p>
+    <div class="steps">
+      <div class="step"><b>A real conversation</b><p>Your goals, timeline, kids’ schools, must-haves, budget truth. No scripts — just planning.</p></div>
+      <div class="step"><b>The strategy</b><p>We map neighborhoods to your life, set search alerts, or build your home’s pricing and prep plan.</p></div>
+      <div class="step"><b>Tours &amp; tune-ups</b><p>Efficient showings clustered around nap schedules — or staging tweaks that add real value before photos.</p></div>
+      <div class="step"><b>The offer</b><p>Comps pulled ourselves, terms negotiated hard, pre-approval matched to offer strength.</p></div>
+      <div class="step"><b>In contract</b><p>New York moves through attorneys — we coordinate inspection, appraisal, mortgage and every deadline so nothing slips.</p></div>
+      <div class="step"><b>Closing day &amp; beyond</b><p>We’re at the table, then we stay in touch — contractors, school tips, annual home-value check-ins.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section id="team" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <span class="kicker">About us</span>
+    <h2 class="serif">One team, two networks, zero handoffs</h2>
+    <p class="sub">Most clients get both of us: Esmeralda leads client care and buyer strategy; Arian drives market analysis and negotiation. Same standards, double coverage.</p>
+    <div class="team">
+      <div class="bio">
+        <div class="bio-head">
+          <!-- SLOT: replace src with esmeralda.jpg -->
+          <img src="" alt="Esmeralda Laho headshot placeholder">
+          <div><div class="nm">Esmeralda Laho</div><div class="rl">Client Care &amp; Buyer Strategy</div></div>
+        </div>
+        <p>An Eastchester mom who knows the Bronxville–Eastchester–Tuckahoe school scene from preschool tours to Saturday markets. She built her practice on a simple promise: families get honest answers about schools, commutes and budgets — even when the honest answer is “wait.”</p>
+        <div class="facts">
+          <span class="chip">Houlihan Lawrence · Eastchester</span>
+          <span class="chip">NY salesperson</span>
+          <span class="chip">(203) 982-7657</span>
+        </div>
+      </div>
+      <div class="bio">
+        <div class="bio-head">
+          <!-- SLOT: replace src with arian.jpg -->
+          <img src="" alt="Arian Marku headshot placeholder">
+          <div><div class="nm">Arian Marku</div><div class="rl">Market Analysis &amp; Negotiation</div></div>
+        </div>
+        <p>The numbers mind of the duo. Arian runs comparative market analyses the old-fashioned way — verified against source documents, not algorithms — and negotiates every deal like it’s his own family’s money on the table.</p>
+        <div class="facts">
+          <span class="chip">Houlihan Lawrence · Eastchester</span>
+          <span class="chip">NY Salesperson · Lic. #10401384664</span>
+          <span class="chip">Exp. 03/2028</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ESTIMATOR ================= -->
+<section id="estimate">
+  <div class="wrap">
+    <span class="kicker">Instant estimate</span>
+    <h2 class="serif">Curious what your home is worth?</h2>
+    <div class="est-card">
+      <div class="est-left">
+        <h2 class="serif">Sixty-second estimate,<br>no phone call required</h2>
+        <p class="sub">Slide, tap, see a number. When you want the *real* answer — a comparative market analysis built from actual recent sales on your street — send it over. Free, no obligation.</p>
+      </div>
+      <div>
+        <div class="field">
+          <label for="sqftInput">Living area (sq ft)</label>
+          <input type="number" id="sqftInput" min="500" max="12000" step="50" value="2200">
+        </div>
+        <div class="field">
+          <label for="condSlider">Condition: <span id="condLabel">Move-in ready</span></label>
+          <input type="range" class="slider" id="condSlider" min="0" max="3" step="1" value="2">
+        </div>
+        <div class="field">
+          <label for="locSelect">Location</label>
+          <select id="locSelect" style="width:100%;padding:13px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.09);color:#fff;font-size:15px;font-weight:600;outline:none">
+            <option value="650" style="color:#222">Eastchester / Tuckahoe (10709 / 10707)</option>
+            <option value="900" style="color:#222">Bronxville (10708)</option>
+            <option value="560" style="color:#222">New Rochelle / Mount Vernon edges</option>
+            <option value="700" style="color:#222">Scarsdale edges</option>
+            <option value="550" style="color:#222">Fairfield County, CT (typical)</option>
+          </select>
+        </div>
+        <div class="est-out" style="margin-top:20px">
+          <span class="lbl">Estimated market range</span>
+          <div id="estVal">$1,320,000 – $1,470,000</div>
+          <span class="range-note" id="estNote">Based on ~$600–$670 per sq ft · adjust for lot, beds and updates</span>
+        </div>
+        <p class="est-disclaim">Rough directional estimate only ($/sq-ft band × condition factor) — not an appraisal or a listing opinion. Your free personalized CMA uses closed sales, current competition and your home’s specifics. Equal Housing Opportunity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONCIERGE CHAT ================= -->
+<section id="ask" style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">Ask us anything</span>
+    <h2 class="serif">Common questions, straight answers</h2>
+    <div class="concierge">
+      <div class="ch-head"><span class="dot"></span><b>Ask Laho &amp; Marku</b><span>Answers by text within hours — (203) 982-7657</span></div>
+      <div class="ch-body">
+        <div class="ch-msg" id="chMsg">Tap a question — we’ll give you the short version here, and the full version whenever you want it. Nothing goes to a call center; you reach us directly.</div>
+        <div class="chips">
+          <button class="qchip" data-a="Bronxville 10708 sits inside the nationally ranked Bronxville school district (K–12 all in one square mile). Eastchester 10709 and Tuckahoe 10707 feed the Eastchester and Tuckahoe districts. The catch: some Eastchester/Tuckahoe addresses are Bronxville PO only — we verify the actual school district for every specific address before you fall in love with a house.">Which town has the best schools?</button>
+          <button class="qchip" data-a="In Westchester, most single-family buyers put 5–20% down plus roughly 2–4% in closing costs (attorney, lender fees, county taxes, title). First-time buyers often qualify for lower-down programs. Tell us your target town and price band and we’ll send real monthly-payment math — not a generic calculator.">What can we afford here?</button>
+          <button class="qchip" data-a="Honestly? Sometimes. If you’re staying under ~3 years, transaction costs usually eat the gain. If you’re staying longer, owning almost always beats renting in these towns. We’ll run YOUR rent-vs-buy numbers side by side — free, no pressure either direction.">Should we keep renting or buy?</button>
+          <button class="qchip" data-a="Pricing right beats pricing high. Overpriced homes go stale and sell below market; correctly priced ones create competition. We bring you closed-sale data from your street, a prep plan that pays, and Houlihan Lawrence’s marketing behind it — then negotiate like it’s our own money.">How do we get top dollar?</button>
+          <button class="qchip" data-a="Yes — we’re both licensed in Connecticut as well as New York, and we actively cover lower Fairfield County: Greenwich, Riverside, Old Greenwich, Stamford and beyond. One team, two states, same standard.">Do you work in Connecticut?</button>
+          <button class="qchip" data-a="Zero. Consultations, CMAs, rent-vs-buy math, school-district guidance — all free. We get paid only when a deal closes, and we’ll tell you when NOT to make a move. Long game, not quick commission.">What does a consult cost?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">Kind words</span>
+    <h2 class="serif">What families say</h2>
+    <div class="quotes">
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>“…an incredible job selling our house. Esmeralda is one of the best realtors I have worked with.”</p>
+        <div class="who"><b>Verified client review</b> · public review of Houlihan Lawrence – Turn Key Team, Eastchester</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p><em>[SLOT: testimonial #2 — paste after next closing. Best kind: mentions school-district help or kid-friendly patience.]</em></p>
+        <div class="who"><b>Reserved slot</b> · collect via post-closing review request</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p><em>[SLOT: testimonial #3 — ideally a first-time buyer story from the park/library network.]</em></p>
+        <div class="who"><b>Reserved slot</b> · collect via open-house follow-ups</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">Say hello</span>
+    <h2 class="serif">Talk to an actual neighbor</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="ci-block" style="margin-top:0">
+          <b>Call or text Esmeralda directly</b>
+          <a class="bigphone" href="tel:+12039827657">(203) 982-7657</a>
+          <p>No call centers, no assistants reading scripts. You reach Esmeralda — usually within the hour, always same day.</p>
+        </div>
+        <div class="ci-block">
+          <b>Office</b>
+          <p>Houlihan Lawrence — Eastchester Brokerage<br>419 White Plains Rd, Eastchester, NY 10709<br>Main: (914) 361-1065</p>
+        </div>
+        <div class="ci-block">
+          <b>Email</b>
+          <p><a href="mailto:esmeraldalaho@gmail.com" style="color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--gold)">esmeraldalaho@gmail.com</a></p>
+        </div>
+        <div class="ci-block">
+          <b>Serving</b>
+          <p>Eastchester · Tuckahoe · Bronxville · Scarsdale · New Rochelle · Lower Fairfield County, CT</p>
+        </div>
+      </div>
+      <form class="lead" id="leadForm" action="#" novalidate>
+        <b style="font-size:16px">Send us a message</b>
+        <div class="frow">
+          <div><label for="fname">Your name</label><input id="fname" required placeholder="First &amp; last"></div>
+          <div><label for="fphone">Phone</label><input id="fphone" type="tel" required placeholder="(914) 555-0100"></div>
+        </div>
+        <div><label for="femail">Email <span style="color:var(--muted);font-weight:400">(optional)</span></label><input id="femail" type="email" placeholder="you@example.com"></div>
+        <div class="frow">
+          <div><label for="fgoal">I want to…</label>
+            <select id="fgoal">
+              <option>Buy my next home</option>
+              <option>Sell my home</option>
+              <option>Rent</option>
+              <option>Just getting advice / not ready yet</option>
+            </select>
+          </div>
+          <div><label for="ftime">Timeline</label>
+            <select id="ftime">
+              <option>ASAP</option>
+              <option>3–6 months</option>
+              <option>6–12 months</option>
+              <option>Just curious</option>
+            </select>
+          </div>
+        </div>
+        <div><label for="fmsg">Anything else? <span style="color:var(--muted);font-weight:400">(kids' ages, towns you love, must-haves…)</span></label><textarea id="fmsg" rows="4"></textarea></div>
+        <div class="consent">By submitting, you agree Laho &amp; Marku / Houlihan Lawrence may contact you about your real estate needs. You may reply STOP anytime. Your info is never sold. Equal Housing Opportunity.</div>
+        <button class="submit" type="submit">Send message →</button>
+        <div id="formMsg">✅ Got it! Esmeralda will text you shortly — usually within the hour. For anything urgent: (203) 982-7657.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <b style="color:var(--ink)">Laho &amp; Marku</b> · Licensed Real Estate Salespersons<br>
+      Houlihan Lawrence — 419 White Plains Rd, Eastchester, NY 10709
+    </div>
+    <div>
+      NY &amp; CT licensed · Esmeralda Laho &amp; Arian Marku<br>
+      © <span id="yr">2026</span> · All information deemed reliable but not guaranteed.
+    </div>
+  </div>
+  <div class="wrap equalh"><span class="eh-mark">EQUAL HOUSING</span><span>Opportunity · We do not discriminate based on race, color, religion, sex, handicap, familial status, national origin, or any protected class.</span></div>
+</footer>
+
+<script>
+  // ---- year ----
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ---- instant estimator ----
+  const sqft=document.getElementById('sqftInput'),
+        cond=document.getElementById('condSlider'),
+        loc=document.getElementById('locSelect'),
+        out=document.getElementById('estVal'),
+        note=document.getElementById('estNote');
+  const conds=['Needs full renovation','Some updating','Move-in ready','Renovated / expanded'];
+  const condF=[0.82,0.93,1.0,1.1];
+  function fmt(n){n=Math.round(n/1000)*1000;return n>=1e6?'$'+(n/1e6).toFixed(2)+'M':'$'+(n/1000).toLocaleString()+'K';}
+  function calc(){
+    const s=Math.max(500,parseInt(sqft.value)||0);
+    const lo=parseFloat(loc.value), f=parseFloat(condF[parseInt(cond.value)]);
+    const low=s*lo*0.92*f, high=s*lo*1.03*f;
+    out.textContent=fmt(low)+' – '+fmt(high);
+    note.textContent='Based on ~$'+Math.round(lo*f*0.92).toLocaleString()+'–$'+Math.round(lo*f*1.03).toLocaleString()+'/sq ft · '+conds[parseInt(cond.value)]+' · adjust for lot, beds & updates';
+    document.getElementById('condLabel').textContent=conds[parseInt(cond.value)];
+  }
+  [sqft,cond,loc].forEach(el=>el.addEventListener('input',calc));
+  calc();
+
+  // ---- concierge chips ----
+  document.querySelectorAll('.qchip').forEach(ch=>{
+    ch.addEventListener('click',()=>{
+      const m=document.getElementById('chMsg');
+      m.textContent=ch.dataset.a;
+      m.style.background='#eef4ee';
+      setTimeout(()=>m.style.background='',450);
+    });
+  });
+
+  // ---- lead form ----
+  const form=document.getElementById('leadForm');
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(!document.getElementById('fname').value || !document.getElementById('fphone').value){
+      alert('Name and phone help us get back to you fastest — everything else is optional.');
+      return;
+    }
+    document.getElementById('formMsg').style.display='block';
+    form.querySelector('button').textContent='Message saved ✓';
+  });
+</script>
+</body>
+</html>
