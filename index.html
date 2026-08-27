@@ -56,12 +56,14 @@
 
   /* portrait cards */
   .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  @media(max-width:480px){.duo{grid-template-columns:1fr}}
-  .pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-align:center;padding-bottom:14px}
+  .duo-single{grid-template-columns:1fr;max-width:380px;margin-left:auto}
+  @media(max-width:480px){.duo{grid-template-columns:1fr}.duo-single{max-width:none;margin-left:0}}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-align:center;padding-bottom:14px;box-shadow:0 12px 30px -18px rgba(35,32,26,.18)}
   .portrait{aspect-ratio:1/1.05;width:100%;object-fit:cover;display:block;background:linear-gradient(160deg,#ece5d6,#ddd3bd);min-height:200px}
-  .pbody{padding:12px 10px 0}
+  .pcard-couple .portrait{aspect-ratio:1/1.05}
+  .pbody{padding:14px 12px 0}
   .pname{font-weight:700;font-size:15.5px}
-  .prole{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .prole{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.4}
 
   /* ---------- towns ---------- */
   .towns{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:28px}
@@ -190,14 +192,13 @@
         <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1f4d3f" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Bronxville–Eastchester–Tuckahoe locals</span>
       </div>
     </div>
-    <div class="duo">
-      <div class="pcard">
-        <img class="portrait" alt="Portrait placeholder — Esmeralda Laho">
-        <div class="pbody"><div class="pname serif">Esmeralda Laho</div><div class="prole">Real Estate Salesperson · Mom of two</div></div>
-      </div>
-      <div class="pcard">
-        <img class="portrait" alt="Portrait placeholder — Arian Marku">
-        <div class="pbody"><div class="pname serif">Arian Marku</div><div class="prole">Real Estate Salesperson · Dad of two</div></div>
+    <div class="duo duo-single">
+      <div class="pcard pcard-couple">
+        <img class="portrait" src="couple.jpg" alt="Esmeralda Laho and Arian Marku — your Houlihan Lawrence real estate advisors in Eastchester" loading="eager">
+        <div class="pbody">
+          <div class="pname serif">Esmeralda &amp; Arian</div>
+          <div class="prole">Husband &amp; wife · Real estate advisors · Houlihan Lawrence, Eastchester</div>
+        </div>
       </div>
     </div>
   </div>
